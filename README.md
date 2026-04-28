@@ -205,8 +205,3 @@ http://localhost:4200
 
 Aditya Talaviya
 
----
-
-## ⭐ If you like this project
-
-Give it a ⭐ on GitHub!
