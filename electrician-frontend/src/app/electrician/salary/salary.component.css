@@ -1,0 +1,61 @@
+.salary-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 6px;
+  flex: 1;
+}
+
+button {
+  padding: 6px 16px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.salary-details {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.loading {
+  font-style: italic;
+}

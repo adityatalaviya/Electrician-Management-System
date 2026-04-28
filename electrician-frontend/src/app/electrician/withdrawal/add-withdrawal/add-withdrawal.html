@@ -1,0 +1,37 @@
+<div class="card">
+
+    <h2>Add Withdrawal</h2>
+
+    <!-- <select [(ngModel)]="workerId">
+        <option value="">Select Worker</option>
+        <option *ngFor="let w of workers" [value]="w.id">
+            {{ w.name }}
+        </option>
+    </select> -->
+
+    <select [(ngModel)]="workerId">
+        <option [ngValue]="null">Select Worker</option>
+        <option *ngFor="let w of workers" [ngValue]="w.id">
+            {{ w.name }}
+        </option>
+    </select>
+
+
+    <select [(ngModel)]="workId">
+        <option value="">Select Work Site</option>
+        <option *ngFor="let w of works" [value]="w.id">
+            {{ w.location }}
+        </option>
+    </select>
+
+    <input type="number" [(ngModel)]="amount" placeholder="Amount">
+
+    <input type="date" [(ngModel)]="date">
+
+    <textarea [(ngModel)]="remarks" placeholder="Remarks"></textarea>
+
+    <button (click)="save()">Save Withdrawal</button>
+   
+
+
+</div>

@@ -1,0 +1,61 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.user {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.disabled {
+  color: #9ca3af;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 8px;
+  background: #ef4444;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #dc2626;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 25px;
+  background: #f9fafb;
+}

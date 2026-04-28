@@ -1,0 +1,15 @@
+<div class="page">
+
+  <h2>👷 Worker Management</h2>
+
+  <div class="actions">
+    <button (click)="goAdd()" [disabled]="!isSubscribed">
+      ➕ Add Worker
+    </button>
+    <button (click)="goList()" [disabled]="!isSubscribed">📋 View Workers</button>
+  </div>
+
+  <!-- 🔥 THIS WAS THE MAIN BUG -->
+  <router-outlet></router-outlet>
+
+</div>

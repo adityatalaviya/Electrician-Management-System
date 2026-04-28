@@ -1,0 +1,81 @@
+.withdrawal-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.withdrawal-header {
+  background: linear-gradient(135deg, #ff7b00, #ff4e50);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.withdrawal-header h2 {
+  margin: 0;
+}
+
+.withdrawal-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.filter-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-section input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.reset-btn {
+  padding: 8px 14px;
+  background: #e74a3b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.summary {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ff4e50;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f8f9fc;
+}
+
+th, td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.amount {
+  color: #e74a3b;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f9fafc;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+}

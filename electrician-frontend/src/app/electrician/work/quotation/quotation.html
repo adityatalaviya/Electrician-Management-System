@@ -1,0 +1,29 @@
+<h3>📄 Quotation</h3>
+
+<div class="form-card">
+  <input type="file" (change)="onFileChange($event)">
+  <input type="text" [(ngModel)]="remarks" placeholder="Remarks">
+  <button (click)="upload()">Upload</button>
+</div>
+
+<table *ngIf="quotations.length">
+  <tr>
+    <th>File</th>
+    <th>Date</th>
+     <th>Remarks</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let q of quotations">
+    <td>{{ q.fileName }}</td>
+    <td>{{ q.createdDate }}</td>
+    <td>{{ q.remarks || '-' }}</td>
+    <td>
+      <button (click)="download(q.id, q.fileName)">
+        Download
+      </button>
+    </td>
+  </tr>
+</table>
+
+<p *ngIf="!quotations.length">No quotations uploaded.</p>

@@ -1,0 +1,40 @@
+<div class="card">
+
+    <h2>Withdrawal History</h2>
+
+    <select [(ngModel)]="selectedWorkerId" (change)="load()">
+    <option value="">Select Worker</option>
+    <option *ngFor="let w of workers" [value]="w.id">
+      {{ w.name }}
+    </option>
+  </select>
+    
+
+
+    <button (click)="load()">View</button>
+
+    <table *ngIf="withdrawals.length">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Site</th>
+                <th>Amount</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let w of withdrawals">
+                <td>{{ w.withdrawalDate }}</td>
+                <td>{{ w.workDetails?.location }}</td>
+                <td>₹ {{ w.amount }}</td>
+                <td>{{ w.remarks }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p *ngIf="!withdrawals.length && selectedWorkerId" class="empty">
+        No withdrawals found for this worker.
+    </p>
+
+</div>

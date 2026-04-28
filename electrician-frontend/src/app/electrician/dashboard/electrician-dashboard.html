@@ -1,0 +1,121 @@
+<!-- <h2>Electrician Dashboard</h2>
+
+<p><b>Name:</b> {{ electrician.name }}</p>
+<p><b>Phone:</b> {{ electrician.phone }}</p>
+<p><b>Status:</b> {{ electrician.status }}</p>
+
+<hr />
+
+<div *ngIf="isSubscribed" class="status active">
+  ✅ Subscription Active
+</div>
+
+<div *ngIf="!isSubscribed" class="status locked">
+  🔒 Please subscribe to unlock features
+</div>
+
+<div class="cards">
+  <div class="card">👷 Workers</div>
+  <div class="card">📅 Attendance</div>
+  <div class="card">💰 Withdrawals</div>
+  <div class="card">📊 Salary</div>
+</div> -->
+<div class="dashboard">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h2>Welcome, {{ electrician?.name }}</h2>
+    <p>{{ electrician?.phone }}</p>
+  </div>
+
+  <!-- LOADING -->
+  <div *ngIf="loading || isSubscribed === null" class="loading">
+    Loading dashboard data...
+  </div>
+
+  <!-- SUBSCRIPTION STATUS -->
+  <div *ngIf="isSubscribed === true && !loading" class="subscription active">
+    ✅ Subscription Active
+    <span>
+      Valid till:
+      {{ membershipEnd | date:'dd/MM/yyyy EEEE' }}
+    </span>
+  </div>
+
+  <div *ngIf="isSubscribed === false" class="subscription locked">
+    🔒 Subscription Inactive
+    <p>Please subscribe to unlock features</p>
+    <strong>Contact Admin: 9737399901</strong>  
+  </div>
+
+  <!-- KPI CARDS -->
+  <div class="cards" *ngIf="!loading" [class.blur]="!isSubscribed">
+
+    <div class="card blue">
+      <h3>Total Workers</h3>
+      <p>{{ totalWorkers }}</p>
+    </div>
+
+    <div class="card green">
+      <h3>Total Work Sites</h3>
+      <p>{{ totalWorks }}</p>
+    </div>
+
+    <div class="card blue">
+      <h3>Total Final Bill</h3>
+      <p>₹ {{ totalFinalBill }}</p>
+    </div>
+
+    <div class="card orange">
+      <h3>Total Owner Paid</h3>
+      <p>₹ {{ totalOwnerPaid }}</p>
+    </div>
+
+    <div class="card red">
+      <h3>Total Remaining</h3>
+      <p>₹ {{ totalRemaining }}</p>
+    </div>
+
+    <div class="card purple">
+      <h3>Total Worker Salary</h3>
+      <p>₹ {{ totalSalary }}</p>
+    </div>
+
+    <div class="card orange">
+      <h3>Total Worker Withdrawals</h3>
+      <p>₹ {{ totalWithdrawals }}</p>
+    </div>
+
+    <div class="card red">
+      <h3>Worker Net Payable</h3>
+      <p>₹ {{ netPayable }}</p>
+    </div>
+
+  </div>
+
+  <!-- ANALYTICS -->
+  <div class="analytics" *ngIf="!loading">
+
+    <h3>Business Overview</h3>
+
+    <div class="charts">
+
+      <!-- Worker vs Work -->
+      <div class="pie-box">
+        <h4>Workers vs Work Sites</h4>
+        <div class="pie workers"></div>
+        <p>Workers: {{ totalWorkers }} | Works: {{ totalWorks }}</p>
+      </div>
+
+      <!-- Bill Paid vs Remaining -->
+      <div class="pie-box">
+        <h4>Bill Paid vs Remaining</h4>
+        <div class="pie billing"></div>
+        <p>Paid: ₹ {{ totalOwnerPaid }} | Remaining: ₹ {{ totalRemaining }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

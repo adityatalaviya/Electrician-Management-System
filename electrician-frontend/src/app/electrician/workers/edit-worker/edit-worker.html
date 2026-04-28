@@ -1,0 +1,33 @@
+<h2>✏️ Edit Worker</h2>
+
+<div class="card">
+  <label>Name</label>
+  <input [(ngModel)]="worker.name" />
+
+  <label>Phone</label>
+  <input [(ngModel)]="worker.phone" />
+
+  <label>Daily Wage</label>
+  <input type="number" [(ngModel)]="worker.dailyWage" />
+
+  <button (click)="update()">Update Worker</button>
+</div>
+
+<!-- <h2>✏️ Edit Worker</h2>
+
+<p *ngIf="loading">Loading worker details...</p>
+
+<div class="card" *ngIf="!loading && worker">
+  <label>Name</label>
+  <input [(ngModel)]="worker.name" />
+
+  <label>Phone</label>
+  <input [(ngModel)]="worker.phone" />
+
+  <label>Daily Wage</label>
+  <input type="number" [(ngModel)]="worker.dailyWage" />
+
+  <button (click)="update()">Update Worker</button>
+
+  <p class="error">{{ error }}</p>
+</div> -->

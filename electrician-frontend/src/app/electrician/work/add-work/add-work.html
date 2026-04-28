@@ -1,0 +1,25 @@
+<div class="card">
+
+  <h2>Add Work Site</h2>
+
+  <input type="text"
+         placeholder="Owner Name"
+         [(ngModel)]="ownerName">
+
+  <input type="text"
+         placeholder="Location"
+         [(ngModel)]="location">
+
+  <select [(ngModel)]="category">
+    <option value="">Select Category</option>
+    <option>SITE</option>
+    <option>BUNGLOW</option>
+    <option>OFFICE</option>
+    <option>FACTORY</option>
+  </select>
+
+  <button (click)="save()" [disabled]="saving">
+    {{ saving ? 'Saving...' : 'Add Work' }}
+  </button>
+
+</div>

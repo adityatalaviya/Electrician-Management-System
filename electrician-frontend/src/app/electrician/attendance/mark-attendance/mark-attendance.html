@@ -1,0 +1,58 @@
+<div class="attendance-card">
+
+  <h2>Mark Attendance</h2>
+
+  <div class="top-bar">
+    <div>
+      <label>Date</label>
+      <input type="date" [(ngModel)]="date">
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Worker</th>
+        <th>Work Site</th>
+        <th>Status</th>
+        <th>Session</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let w of workers">
+        <td>{{ w.name }}</td>
+
+        <!-- ✅ WORK SITE DROPDOWN -->
+        <td>
+          <select [(ngModel)]="w.workId">
+            <option [ngValue]="null">Select Site</option>
+
+            <option *ngFor="let site of works" [ngValue]="site.id">
+              {{ site.location }} ({{ site.ownerName }})
+            </option>
+          </select>
+
+        </td>
+
+        <td>
+          <select [(ngModel)]="w.status">
+            <option>PRESENT</option>
+            <option>ABSENT</option>
+          </select>
+        </td>
+
+        <td>
+          <select [(ngModel)]="w.session">
+            <option>MORNING</option>
+            <option>AFTERNOON</option>
+            <option>FULL_DAY</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="submit()">Save Attendance</button>
+
+</div>

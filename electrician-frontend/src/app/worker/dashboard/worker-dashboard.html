@@ -1,0 +1,33 @@
+<div class="worker-dashboard">
+
+  <div class="profile-card">
+    <h2>Welcome, {{ worker?.name }}</h2>
+    <p>📞 {{ worker?.phone }}</p>
+    <p class="wage">Daily Wage: ₹ {{ worker?.dailyWage }}</p>
+
+    <button class="logout-btn" (click)="logout()">
+      Logout
+    </button>
+  </div>
+
+  <div class="info-cards">
+
+    <div class="card blue" routerLink="/worker/attendance">
+      <h3>Attendance</h3>
+      <p>View your attendance history</p>
+    </div>
+
+
+    <div class="card green" routerLink="/worker/salary">
+      <h3>Salary</h3>
+      <p>Check earned & remaining salary</p>
+    </div>
+
+    <div class="card orange" routerLink="/worker/withdrawals">
+      <h3>Withdrawals</h3>
+      <p>View withdrawal history</p>
+    </div>
+
+  </div>
+
+</div>

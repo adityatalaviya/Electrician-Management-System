@@ -1,0 +1,82 @@
+<div class="payment-container">
+
+  <h3>💰 Owner Payment</h3>
+
+  <!-- SUMMARY SECTION -->
+  <div class="payment-summary" *ngIf="summary">
+    <div class="summary-box total">
+      <span>Total Bill</span>
+      <h4>₹ {{ summary.finalBillAmount }}</h4>
+    </div>
+
+    <div class="summary-box paid">
+      <span>Total Paid</span>
+      <h4>₹ {{ summary.totalPaidByOwner }}</h4>
+    </div>
+
+    <div class="summary-box remaining">
+      <span>Remaining</span>
+      <h4>₹ {{ summary.remainingAmount }}</h4>
+    </div>
+  </div>
+
+  <!-- ADD PAYMENT FORM -->
+  <div class="payment-card">
+    <h4>Add Payment</h4>
+
+    <div class="form-grid">
+      <input type="number" [(ngModel)]="amount" placeholder="Amount">
+
+      <input type="date" [(ngModel)]="date">
+
+      <select [(ngModel)]="mode">
+        <option value="CASH">CASH</option>
+        <option value="UPI">UPI</option>
+        <option value="BANK">BANK</option>
+        <option value="CHEQUE">CHEQUE</option>
+      </select>
+
+      <input type="text" [(ngModel)]="remarks" placeholder="Remarks">
+
+      <button (click)="add()">Add Payment</button>
+    </div>
+  </div>
+
+  <!-- PAYMENT HISTORY TABLE -->
+  <div class="table-card" *ngIf="payments.length">
+
+    <h4>Payment History</h4>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Mode</th>
+          <th>Amount</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of payments">
+          <td>{{ p.paymentDate }}</td>
+          <td>
+            <span class="mode-badge" [ngClass]="p.paymentMode.toLowerCase()">
+              {{ p.paymentMode }}
+            </span>
+          </td>
+          <td class="amount">
+            ₹ {{ p.amount }}
+          </td>
+          <td>{{ p.remarks || '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EMPTY STATE -->
+  <div class="empty" *ngIf="!payments.length">
+    No payments added yet.
+  </div>
+
+</div>

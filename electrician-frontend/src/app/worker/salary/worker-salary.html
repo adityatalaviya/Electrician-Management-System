@@ -1,0 +1,45 @@
+<div class="salary-wrapper">
+
+  <div class="salary-header">
+    <h2>💰 Salary Summary</h2>
+    <p>Track your total earnings & balance</p>
+  </div>
+
+  <div *ngIf="loading">
+    Loading salary details...
+  </div>
+
+  <div *ngIf="!loading && salary">
+
+    <div class="salary-grid">
+
+      <div class="salary-box">
+        <h4>Daily Wage</h4>
+        <p>₹ {{ salary?.dailyWage }}</p>
+      </div>
+
+      <div class="salary-box">
+        <h4>Total Worked Days</h4>
+        <p>{{ salary?.totalWorkedDays }}</p>
+      </div>
+
+      <div class="salary-box green">
+        <h4>Total Earned</h4>
+        <p>₹ {{ salary?.totalEarnedAmount }}</p>
+      </div>
+
+      <div class="salary-box red">
+        <h4>Total Withdrawals</h4>
+        <p>₹ {{ salary?.totalWithdrawal }}</p>
+      </div>
+
+      <div class="salary-box highlight">
+        <h4>Remaining Salary</h4>
+        <p>₹ {{ salary?.remainingSalary }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

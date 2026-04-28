@@ -1,0 +1,42 @@
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h2>Worker Login</h2>
+
+    <!-- STEP 1 -->
+    <div *ngIf="step === 1">
+
+      <input
+        type="text"
+        [(ngModel)]="phone"
+        placeholder="Enter Phone Number" />
+
+      <button (click)="requestOtp()" [disabled]="loading">
+        {{ loading ? 'Sending...' : 'Send OTP' }}
+      </button>
+
+    </div>
+
+    <!-- STEP 2 -->
+    <div *ngIf="step === 2">
+
+      <input
+        type="text"
+        [(ngModel)]="otp"
+        placeholder="Enter OTP" />
+
+      <button (click)="verifyOtp()">
+        Verify OTP
+      </button>
+
+    </div>
+
+    <!-- ERROR -->
+    <div *ngIf="error" style="color:red; margin-top:10px;">
+      {{ error }}
+    </div>
+
+  </div>
+
+</div>

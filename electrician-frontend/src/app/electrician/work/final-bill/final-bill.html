@@ -1,0 +1,71 @@
+<h3>🧾 Final Bill</h3>
+
+<div *ngIf="summary && summary.finalBillAmount > 0; else createForm">
+
+  <!-- STATUS -->
+  <div class="status-badge" [ngClass]="getStatus().toLowerCase()">
+    {{ getStatus() }}
+  </div>
+
+  <!-- SUMMARY CARDS -->
+  <div class="summary">
+
+    <div class="box total">
+      <h4>Final Amount</h4>
+      ₹ {{ summary.finalBillAmount }}
+    </div>
+
+    <div class="box paid">
+      <h4>Total Paid</h4>
+      ₹ {{ summary.totalPaidByOwner }}
+    </div>
+
+    <div class="box remaining">
+      <h4>Remaining</h4>
+      ₹ {{ summary.remainingAmount }}
+    </div>
+
+  </div>
+
+ 
+  <div *ngIf="summary?.billFileName" class="download-card">
+
+    <div class="file-info">
+      <div class="file-icon">📄</div>
+
+      <div class="file-details">
+        <span class="file-label">Final Bill File</span>
+        <span class="file-name">
+          {{ summary.billFileName }}
+        </span>
+      </div>
+    </div>
+
+    <button class="download-btn" (click)="download()">
+      ⬇ Download
+    </button>
+
+  </div>
+
+
+</div>
+
+
+<!-- SHOW ADVANCE PAYMENT MESSAGE -->
+<div *ngIf="!summary && paymentsExist" class="advance-info">
+  ⚠ Advance payments received before final bill creation.
+</div>
+
+
+<!-- CREATE FORM -->
+<ng-template #createForm>
+
+  <div class="form-card">
+    <input type="number" [(ngModel)]="amount" placeholder="Amount">
+    <input type="date" [(ngModel)]="date">
+    <input type="text" [(ngModel)]="remarks" placeholder="Remarks">
+    <input type="file" (change)="onFileChange($event)">
+    <button (click)="create()">Create Final Bill</button>
+  </div>
+
+</ng-template>

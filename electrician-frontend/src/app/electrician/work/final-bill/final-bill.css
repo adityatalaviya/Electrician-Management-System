@@ -1,0 +1,118 @@
+.status-badge {
+  padding: 6px 15px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.paid {
+  background: #4caf50;
+  color: white;
+}
+
+.partial {
+  background: #ff9800;
+  color: white;
+}
+
+.pending {
+  background: #f44336;
+  color: white;
+}
+
+.summary {
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+}
+
+.total { background: #1976d2; }
+.paid { background: #4caf50; }
+.remaining { background: #f44336; }
+
+.form-card {
+  display: flex;
+  gap: 10px;
+}
+/* DOWNLOAD CARD */
+
+.download-card {
+  margin-top: 25px;
+  background: white;
+  padding: 18px 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.download-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+/* FILE INFO */
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-icon {
+  font-size: 30px;
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-label {
+  font-size: 12px;
+  color: #777;
+}
+
+.file-name {
+  font-weight: 600;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* DOWNLOAD BUTTON */
+
+.download-btn {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: scale(1.05);
+}
+.status-badge.advance {
+  background:#fff3cd;
+  color:#856404;
+}
+
+.status-badge.no {
+  background:#f1f1f1;
+}

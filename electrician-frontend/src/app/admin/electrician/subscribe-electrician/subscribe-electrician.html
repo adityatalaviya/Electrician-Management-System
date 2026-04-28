@@ -1,0 +1,21 @@
+<h2>Select Subscription Plan</h2>
+
+<table border="1" *ngIf="plans$ | async as plans">
+  <tr>
+    <th>Plan Name</th>
+    <th>Duration (Days)</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let p of plans">
+    <td>{{ p.planName }}</td>
+    <td>{{ p.durationDays }}</td>
+    <td>{{ p.price }}</td>
+    <td>
+      <button (click)="subscribe(p.id)">
+        Subscribe
+      </button>
+    </td>
+  </tr>
+</table>

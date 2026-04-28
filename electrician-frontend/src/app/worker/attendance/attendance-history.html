@@ -1,0 +1,80 @@
+<div class="attendance-wrapper">
+
+  <!-- HEADER -->
+  <div class="attendance-header">
+    <h2>📅 My Attendance History</h2>
+    <p>Track your monthly attendance records & work details</p>
+  </div>
+
+  <!-- CARD -->
+  <div class="attendance-card">
+
+    <!-- FILTER SECTION -->
+    <div class="filter-section">
+      <label><strong>Select Month:</strong></label>
+
+      <input
+        type="month"
+        [(ngModel)]="selectedMonth"
+        (change)="filterByMonth()" />
+
+      <button
+        class="reset-btn"
+        (click)="resetFilter()">
+        Reset
+      </button>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div *ngIf="filteredList.length === 0" class="empty-state">
+      <div class="empty-icon">📂</div>
+      <h3>No Attendance Records</h3>
+      <p>No attendance found for selected month.</p>
+    </div>
+
+    <!-- TABLE -->
+    <table *ngIf="filteredList.length > 0">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Session</th>
+          <th>Work Site</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let a of filteredList">
+
+          <td>
+            {{ a.attendanceDate | date:'dd MMM yyyy' }}
+          </td>
+
+          <td>
+            <span
+              class="badge"
+              [ngClass]="{
+                'present': a.status === 'PRESENT',
+                'absent': a.status === 'ABSENT'
+              }">
+              {{ a.status }}
+            </span>
+          </td>
+
+          <td>
+            <span class="session">
+              {{ a.session }}
+            </span>
+          </td>
+
+          <td>
+            {{ a.workDetails?.location }}
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

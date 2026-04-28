@@ -1,0 +1,30 @@
+<h2>👷 Workers</h2>
+
+<!-- <button class="add-btn" (click)="goAdd()">+ Add Worker</button> -->
+
+<table class="table" *ngIf="workers.length > 0; else empty">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Daily Wage</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let w of workers; trackBy: trackById">
+      <td>{{ w.name }}</td>
+      <td>{{ w.phone }}</td>
+      <td>₹ {{ w.dailyWage }}</td>
+      <td>
+        <button (click)="edit(w)">✏️</button>
+        <button (click)="remove(w.id)">🗑️</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #empty>
+  <p class="empty">No workers added yet.</p>
+</ng-template>

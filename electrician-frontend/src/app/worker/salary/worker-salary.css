@@ -1,0 +1,95 @@
+.salary-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* HEADER */
+.salary-header {
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.salary-header h2 {
+  margin: 0;
+}
+
+.salary-header p {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* CARD */
+.salary-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* GRID */
+.salary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* BOX */
+.salary-box {
+  background: #f8f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.salary-box:hover {
+  transform: translateY(-5px);
+}
+
+.salary-box h4 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.salary-box p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* COLORS */
+.salary-box.green {
+  background: #e6f9f0;
+  color: #1cc88a;
+}
+
+.salary-box.red {
+  background: #fde8e8;
+  color: #e74a3b;
+}
+
+.salary-box.highlight {
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  color: white;
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+/* EMPTY */
+.empty {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}

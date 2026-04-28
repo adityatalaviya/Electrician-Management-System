@@ -1,0 +1,50 @@
+<div class="attendance-card">
+
+  <h2>Attendance History (Month Wise)</h2>
+
+  <div class="filters">
+    <select [(ngModel)]="selectedWorkerId">
+      <option value="">Select Worker</option>
+      <option *ngFor="let w of workers" [value]="w.id">
+        {{ w.name }}
+      </option>
+    </select>
+
+    <input type="month" [(ngModel)]="selectedMonth">
+
+    <button (click)="loadAttendance()">View</button>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary" *ngIf="attendanceList.length">
+    <p><strong>Present Days:</strong> {{ presentDays }}</p>
+    <p><strong>Absent Days:</strong> {{ absentDays }}</p>
+    <p><strong>Total Entries:</strong> {{ totalDays }}</p>
+  </div>
+
+  <!-- TABLE -->
+  <table *ngIf="attendanceList.length">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Session</th>
+        <th>Site</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let a of attendanceList">
+        <td>{{ a.attendanceDate }}</td>
+        <td>{{ a.status }}</td>
+        <td>{{ a.session }}</td>
+        <td>{{ a.workDetails?.location }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!attendanceList.length">
+    No attendance records found
+  </p>
+
+</div>

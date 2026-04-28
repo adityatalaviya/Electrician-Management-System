@@ -1,0 +1,30 @@
+.dashboard {
+  padding: 30px;
+}
+
+.cards {
+  display: flex;
+  gap: 25px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 220px;
+  padding: 25px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.blue { background: #1976d2; }
+.green { background: #4caf50; }
+.purple { background: #673ab7; }
+.orange { background: #ff9800; }
+.red { background: #ef4444; }
+.dark { background: #0f172a; color: white; }

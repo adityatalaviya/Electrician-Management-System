@@ -1,0 +1,67 @@
+<div class="login-wrapper">
+
+  <div class="login-card">
+
+    <div class="logo">⚡</div>
+
+    <h2>Electrician Login</h2>
+
+    <!-- PHONE INPUT -->
+
+    <div class="input-group">
+
+      <label>Phone Number</label>
+
+      <input
+        type="text"
+        maxlength="10"
+        [(ngModel)]="phone"
+        [disabled]="otpSent"
+        placeholder="Enter phone number" />
+
+    </div>
+
+    <!-- REQUEST OTP -->
+
+    <button
+      *ngIf="!otpSent"
+      (click)="requestOtp()"
+      [disabled]="loading"
+      class="login-btn">
+
+      {{ loading ? 'Sending...' : 'Request OTP' }}
+
+    </button>
+
+    <!-- OTP INPUT -->
+
+    <div *ngIf="otpSent">
+
+      <div class="input-group">
+
+        <label>Enter OTP</label>
+
+        <input
+          type="text"
+          maxlength="6"
+          [(ngModel)]="otp"
+          placeholder="Enter OTP" />
+
+      </div>
+
+      <button
+        (click)="verifyOtp()"
+        [disabled]="loading"
+        class="login-btn">
+
+        {{ loading ? 'Verifying...' : 'Verify OTP' }}
+
+      </button>
+
+    </div>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+
+  </div>
+
+</div>

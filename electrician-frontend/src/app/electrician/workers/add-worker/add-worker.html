@@ -1,0 +1,21 @@
+<h2>Add Worker</h2>
+
+<div *ngIf="!isSubscribed" class="lock">
+  🔒 Subscribe to unlock this feature
+</div>
+
+<div class="card" [class.disabled]="!isSubscribed">
+
+  <label>Name</label>
+  <input [(ngModel)]="worker.name" />
+
+  <label>Phone</label>
+  <input [(ngModel)]="worker.phone" />
+
+  <label>Daily Wage</label>
+  <input type="number" [(ngModel)]="worker.dailyWage" />
+
+  <button (click)="save()">Save Worker</button>
+
+  <p class="error">{{ error }}</p>
+</div>

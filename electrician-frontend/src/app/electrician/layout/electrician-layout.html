@@ -1,0 +1,56 @@
+<div class="layout">
+
+  <aside class="sidebar">
+    <h3>Electrician</h3>
+
+    <div class="user">
+      <strong>{{ electrician?.name }}</strong><br />
+      <small>{{ electrician?.phone }}</small>
+    </div>
+
+    <nav>
+      <a routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+      <a *ngIf="isSubscribed" routerLink="workers" routerLinkActive="active">Workers</a>
+      <a *ngIf="!isSubscribed" class="disabled">Workers 🔒</a>
+
+
+      <a *ngIf="isSubscribed" routerLink="work/add" routerLinkActive="active">Add Work</a>
+      <a *ngIf="isSubscribed" routerLink="work/list" routerLinkActive="active">Work Sites</a>
+      <a *ngIf="!isSubscribed" class="disabled">Work 🔒</a>
+
+      <!-- MARK ATTENDANCE -->
+      <a *ngIf="isSubscribed" routerLink="attendance/mark" routerLinkActive="active">Mark Attendance</a>
+
+      <!-- ATTENDANCE HISTORY -->
+      <a *ngIf="isSubscribed" routerLink="attendance/history" routerLinkActive="active">Attendance History</a>
+
+      <!-- LOCKED STATE -->
+      <a *ngIf="!isSubscribed" class="disabled">Attendance 🔒</a>
+
+      <a *ngIf="isSubscribed" routerLink="salary" routerLinkActive="active">Salary</a>
+
+      <a *ngIf="!isSubscribed" class="disabled">Salary 🔒</a>
+
+      <!-- WITHDRAWAL -->
+      <a *ngIf="isSubscribed" routerLink="withdrawal/add" routerLinkActive="active">
+        Add Withdrawal
+      </a>
+
+      <a *ngIf="isSubscribed" routerLink="withdrawal/history" routerLinkActive="active">
+        Withdrawal History
+      </a>
+
+      <!-- LOCK -->
+      <a *ngIf="!isSubscribed" class="disabled">
+        Locked 🔒
+      </a>
+    </nav>
+
+    <button (click)="logout()">Logout</button>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

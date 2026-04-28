@@ -1,0 +1,46 @@
+<div class="work-container">
+
+  <h2>Work Management</h2>
+
+  <!-- TAB BUTTONS -->
+  <div class="tabs">
+    <button 
+      [class.active]="activeTab === 'quotation'" 
+      (click)="setTab('quotation')">
+      📄 Quotation
+    </button>
+
+    <button 
+      [class.active]="activeTab === 'final'" 
+      (click)="setTab('final')">
+      🧾 Final Bill
+    </button>
+
+    <button 
+      [class.active]="activeTab === 'payment'" 
+      (click)="setTab('payment')">
+      💰 Owner Payment
+    </button>
+  </div>
+
+  <!-- TAB CONTENT -->
+  <div class="tab-content">
+
+    <app-quotation 
+      *ngIf="activeTab === 'quotation'"
+      [workId]="workId">
+    </app-quotation>
+
+    <app-final-bill 
+      *ngIf="activeTab === 'final'"
+      [workId]="workId">
+    </app-final-bill>
+
+    <app-owner-payment 
+      *ngIf="activeTab === 'payment'"
+      [workId]="workId">
+    </app-owner-payment>
+
+  </div>
+
+</div>

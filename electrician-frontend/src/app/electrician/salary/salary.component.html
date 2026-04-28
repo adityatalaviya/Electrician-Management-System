@@ -1,0 +1,54 @@
+<div class="salary-card">
+
+  <h2>Salary Summary</h2>
+
+  <div class="filter">
+    <select [(ngModel)]="selectedWorkerId">
+      <option value="">Select Worker</option>
+      <option *ngFor="let w of workers" [value]="w.id">
+        {{ w.name }}
+      </option>
+    </select>
+
+    <button (click)="viewSalary()">View Salary</button>
+  </div>
+
+  <!-- <div *ngIf="loading" class="loading">
+    Loading salary...
+  </div> -->
+
+  <div *ngIf="salary" class="salary-details">
+
+    <div class="row">
+      <span>Worker Name</span>
+      <strong>{{ salary.workerName }}</strong>
+    </div>
+
+    <div class="row">
+      <span>Daily Wage</span>
+      <strong>₹ {{ salary.dailyWage }}</strong>
+    </div>
+
+    <div class="row">
+      <span>Total Worked Days</span>
+      <strong>{{ salary.totalWorkedDays }}</strong>
+    </div>
+
+    <div class="row">
+      <span>Total Earned Amount</span>
+      <strong class="green">₹ {{ salary.totalEarnedAmount }}</strong>
+    </div>
+
+    <div class="row">
+      <span>Total Withdrawal</span>
+      <strong class="red">₹ {{ salary.totalWithdrawal }}</strong>
+    </div>
+
+    <div class="row highlight">
+      <span>Remaining Salary</span>
+      <strong>₹ {{ salary.remainingSalary }}</strong>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,26 @@
+<h2>List Electricians</h2>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Status</th>
+    <th>Plan</th>
+    <th>Membership End</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let e of electricians">
+    <td>{{ e.name }}</td>
+    <td>{{ e.phone }}</td>
+    <td>{{ e.status }}</td>
+    <td>{{ e.subscriptionPlan?.planName || '-' }}</td>
+    <td>{{ e.membershipEnd || '-' }}</td>
+    <td>
+      <button *ngIf="e.status === 'CREATED'"
+              (click)="subscribe(e.id)">
+        Subscribe
+      </button>
+    </td>
+  </tr>
+</table>

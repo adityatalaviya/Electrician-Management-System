@@ -1,0 +1,55 @@
+<div class="card">
+
+  <h2>Work Sites</h2>
+
+  <table *ngIf="works.length">
+    <thead>
+      <tr>
+        <th>Owner</th>
+        <th>Location</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Manage</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let w of works">
+        <td>{{ w.ownerName }}</td>
+        <td>{{ w.location }}</td>
+        <td>{{ w.category }}</td>
+
+        <td>
+          <span 
+            class="status"
+            [ngClass]="{
+              'ongoing': w.status === 'ONGOING',
+              'completed': w.status === 'COMPLETED'
+            }">
+            {{ w.status }}
+          </span>
+        </td>
+
+        <td class="action-buttons">
+
+          <button class="open-btn"
+                  (click)="openWork(w.id)">
+            Open
+          </button>
+
+          <button *ngIf="w.status === 'ONGOING'"
+                  class="complete-btn"
+                  (click)="markCompleted(w.id)">
+            Complete
+          </button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!works.length" class="empty">
+    No work sites added yet.
+  </p>
+
+</div>

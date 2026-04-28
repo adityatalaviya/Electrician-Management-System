@@ -1,0 +1,31 @@
+.worker-home {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+button {
+  padding: 14px 22px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.lock {
+  color: red;
+  margin-bottom: 15px;
+}

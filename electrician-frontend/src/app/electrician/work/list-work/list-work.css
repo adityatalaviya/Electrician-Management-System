@@ -1,0 +1,84 @@
+.card {
+  background: #ffffff;
+  padding: 25px;
+  max-width: 1000px;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #f4f6f8;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ongoing {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.open-btn {
+  padding: 5px 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.complete-btn {
+  padding: 5px 12px;
+  background: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.open-btn:hover {
+  background: #1565c0;
+}
+
+.complete-btn:hover {
+  background: #2e7d32;
+}
+
+.empty {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+}
